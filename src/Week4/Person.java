@@ -1,7 +1,7 @@
 package Week4;
 
 public class Person {
-    //attribrutes
+    //attributes
     private String name;
     private String ssn;
     private String phone;

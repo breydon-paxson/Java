@@ -2,21 +2,33 @@ package Week4;
 
 public class BankAccount {
 
+    private int nextId = 100;
+
     //Attributes
-    private Person owner;
+    private static int numberOfAccounts = 0;
+    private String owner;
     private double balance;
     private int account;
 
     //constructor
-    public BankAccount(Person owner, int account) {
+    public BankAccount(String owner, int account) {
         this.owner = owner;
         balance = 0;
         this.account = account;
-
+        numberOfAccounts++;
+    }
+    public BankAccount(String owner, int account, double balance) {
+        this.owner = owner;
+        this.balance = balance;
+        this.account = account;
+        numberOfAccounts++;
     }
 
-
     //other methods
+    public static int getNumberOfAccounts() {
+        return numberOfAccounts;
+    }
+
     public void deposit(double amount) {
         balance += amount;
     }
@@ -25,11 +37,18 @@ public class BankAccount {
         if (amount <= balance)
         {
             balance -= amount;
+            //this.sayHi();
+            sayHi();
         }
         else
         {
             System.out.println("Insufficent funds");
         }
+    }
+
+    public String sayHi() {
+        int x = 10;
+        return ("Hi " + x);
     }
 
     //Print
@@ -39,14 +58,14 @@ public class BankAccount {
     }
 
 
-//    public static void main(String[] args) {
-//        BankAccount suzyAcct = new BankAccount("Suzy", 1234);
-//        System.out.println(suzyAcct);
-//        suzyAcct.deposit(200);
-//        System.out.println(suzyAcct);
-//        suzyAcct.withdraw(100);
-//        System.out.println(suzyAcct);
-//    }
+    public static void main(String[] args) {
+        BankAccount suzyAcct = new BankAccount("Suzy", 1234);
+        System.out.println(suzyAcct);
+        suzyAcct.deposit(200);
+        System.out.println(suzyAcct);
+        suzyAcct.withdraw(100);
+        System.out.println(suzyAcct);
+    }
 }
 
 

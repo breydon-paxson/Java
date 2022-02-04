@@ -3,6 +3,7 @@ package Week4;
 public class Pet {
 
     //attributes
+    private static int totalNumberOfPets = 0;
     private String type;
     private String name;
     private int numberOfPets;
@@ -12,8 +13,13 @@ public class Pet {
         this.type = type;
         this.name = name;
         numberOfPets = number;
+        totalNumberOfPets++;
+
     }
     //other methods
+    public static int getTotalNumberOfPets() {
+        return totalNumberOfPets;
+    }
     public void petThePet(int times) {
         numberOfPets += times;
     }

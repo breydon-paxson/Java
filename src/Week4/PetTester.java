@@ -8,5 +8,6 @@ public class PetTester {
 //        System.out.println(cat);
 
         cat.sameName(4);
+        System.out.println(Pet.getTotalNumberOfPets());
     }
 }
