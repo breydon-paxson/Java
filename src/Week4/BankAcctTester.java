@@ -11,7 +11,7 @@ public class BankAcctTester {
 
         acct.deposit(1000);
         System.out.println(acct);
-        System.out.println(BankAccount.getNumberOfAccounts());
+        //System.out.println(BankAccount.getNumberOfAccounts());
         //suzyAcct.balance += 1000;
         //System.out.println(suzyAcct.balance);
     }

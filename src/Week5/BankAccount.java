@@ -1,4 +1,4 @@
-package Week4;
+package Week5;
 
 public class BankAccount {
 
@@ -9,10 +9,11 @@ public class BankAccount {
 
     //constructor
     public BankAccount(String owner, int acct) {
-        this.owner = owner;
-        accountNum = acct;
-        balance = 0;
-        //this(owner,acct,0);
+        //this.owner = owner;
+        //accountNum = nextId;
+        //nextId++;
+        //balance = 0;
+        //this(owner,nextId++,0);
     }
 
     public BankAccount(String owner, int acct, double balance) {
@@ -55,18 +56,22 @@ public class BankAccount {
 //                balance == otherAcct.balance;
 //    }
 
-//    public boolean equals(Object obj) {
-//        if (obj instanceof BankAccount) {
-//            BankAccount otherAcct = (BankAccount) obj;
-//            return owner.equals(otherAcct.owner) &&
-//                    accountNum == otherAcct.accountNum &&
-//                    balance == otherAcct.balance;
-//        } else return false;
-//    }
+    public boolean equals(Object obj) {
+        if (obj instanceof BankAccount) {
+            BankAccount otherAcct = (BankAccount) obj;
+            return owner.equals(otherAcct.owner) &&
+                    accountNum == otherAcct.accountNum &&
+                    balance == otherAcct.balance;
+        } else return false;
+    }
 
     public BankAccount copy() {
         return new BankAccount(owner, accountNum, balance);
     }
+
+    //public BankAccount copy() {
+        //return new BankAccount(owner, accountNum, balance);
+    //}
 
     //print methods
     public String toString() {
