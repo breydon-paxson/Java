@@ -1,4 +1,4 @@
-package Week5;
+package Week4;
 
 public class ExtraMathFunctions {
     public static double percentOf(int percentage, double number) {

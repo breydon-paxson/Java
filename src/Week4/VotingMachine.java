@@ -1,4 +1,4 @@
-package Week5;
+package Week4;
 
 public class VotingMachine {
     private int numberYesVotes;
@@ -22,8 +22,8 @@ public class VotingMachine {
         numberYesVotes = 0;
     }
 
-    public String toString() {
-        int out = returnYesCount() + returnNoCount();
-            return out;
-    }
+    //public String toString() {
+        //int out = returnYesCount() + returnNoCount();
+          //  return out;
+    //}
 }

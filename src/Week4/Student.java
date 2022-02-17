@@ -1,15 +1,19 @@
 package Week4;
 
+import java.util.ArrayList;
+
 public class Student {
     //attributes
     private String StudentName;
     private int idNumber;
     private static int nextID = 100;
+    private ArrayList<String> course;
 
     //constructor
     public Student(String StudentName, int idNumber) {
         this.StudentName = StudentName;
         this.idNumber = idNumber;
+        this.course = new ArrayList<>();
     }
     public Student(String StudentName) {
         this.StudentName = StudentName;
