@@ -15,10 +15,13 @@ public class CompareStrings {
 
         String[] strArray = {"oranges", "apples", "bananas"};
         ArrayList<String> lst = new ArrayList<>(Arrays.asList(strArray));
-        Arrays.sort(strArray);
         System.out.println(Arrays.toString(strArray));
+//        Arrays.sort(strArray);
+//        System.out.println(Arrays.toString(strArray));
         Collections.sort(lst);
         System.out.println(lst);
+
+
 
 
 
