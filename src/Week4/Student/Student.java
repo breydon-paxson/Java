@@ -56,12 +56,11 @@ public class Student {
         } else
             return false;
     }
-
     //print
     public String toString() {
         String out = " ";
 
-        if (course.size() ==4) {
+        if (course.size() >= 4) {
             out += (StudentName + "'s ID number is " + idNumber +
                     " and this student is considered full time if taking these courses " + course);
         } else if ((course.size() <= 3) && (course.size() > 0)) {
