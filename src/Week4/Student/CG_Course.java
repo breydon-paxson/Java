@@ -1,6 +1,6 @@
-package Week4;
+package Week4.Student;
 
-public class CG_Course extends Course{
+public class CG_Course extends Course {
     private String location;
 
     public CG_Course(String department, String number, String hours, String location) {

@@ -1,4 +1,4 @@
-package Week4;
+package Week4.Student;
 
 import java.util.ArrayList;
 
@@ -8,17 +8,20 @@ public class Student {
     private int idNumber;
     private static int nextID = 100;
     private ArrayList<String> course;
+    private Major major;
 
     //constructor
-    public Student(String StudentName, int idNumber) {
+    public Student(String StudentName, int idNumber, Major major) {
         this.StudentName = StudentName;
         this.idNumber = idNumber;
         this.course = new ArrayList<>();
+        this.major = major;
     }
-    public Student(String StudentName) {
+    public Student(String StudentName, Major major) {
         this.StudentName = StudentName;
         this.idNumber = nextID;
         nextID++;
+        this.major = major;
     }
     //method
     public void NewName(String name2) {
@@ -56,17 +59,19 @@ public class Student {
 
     //print
     public String toString() {
+        String out = " ";
+
         if (course.size() ==4) {
-            System.out.println(StudentName + "'s ID number is " + idNumber +
+            out += (StudentName + "'s ID number is " + idNumber +
                     " and this student is considered full time if taking these courses " + course);
         } else if ((course.size() <= 3) && (course.size() > 0)) {
-            System.out.println(StudentName + "'s ID number is " + idNumber +
+            out += (StudentName + "'s ID number is " + idNumber +
                     " and this student is not considered full time. They are taking these courses. " + course);
         } else if (course.size() == 0) {
-            System.out.println(StudentName + "'s ID number is " + idNumber +
+            out += (StudentName + "'s ID number is " + idNumber +
                     " and this student is not enrolled at this school. ");
         }
-        return " ";
+        return out;
         }
     }
 

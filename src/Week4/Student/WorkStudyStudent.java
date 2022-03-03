@@ -1,10 +1,12 @@
-package Week4;
+package Week4.Student;
 
-public class WorkStudyStudent extends Student{
+import Week4.Student.Student;
+
+public class WorkStudyStudent extends Student {
     private int hoursWorked;
 
-    public WorkStudyStudent(String StudentName, int IdNumber, int hoursWorked) {
-        super(StudentName,IdNumber);
+    public WorkStudyStudent(String StudentName, int idNumber, Major major, int hoursWorked) {
+        super(StudentName,idNumber, major);
         this.hoursWorked = hoursWorked;
     }
 
