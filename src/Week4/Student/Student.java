@@ -7,7 +7,7 @@ public class Student {
     private String StudentName;
     private int idNumber;
     private static int nextID = 100;
-    private ArrayList<String> course;
+    private ArrayList<Course> course;
     private Major major;
 
     //constructor
@@ -28,13 +28,13 @@ public class Student {
         StudentName = name2;
     }
 
-    public String courseAdd(String obj) {
-        if (course.contains(String.valueOf(obj))) {
+    public String courseAdd(Course obj) {
+        if (course.contains((obj))) {
             System.out.println("This student already is in the class " + obj + " ");
-        } else if (course.size()==4) {
-            System.out.println("The student has 4 classes already");
+        } else if (course.size()>=4) {
+            System.out.println("The student is taking at least 4 classes already");
         } else {
-            course.add(String.valueOf(obj));
+            course.add((obj));
             System.out.println("The course " + obj + " has been added to the students roster");
         }
         return " ";
@@ -62,13 +62,19 @@ public class Student {
 
         if (course.size() >= 4) {
             out += (StudentName + "'s ID number is " + idNumber +
-                    " and this student is considered full time if taking these courses " + course);
+                    " and this student is considered full time if taking these courses " + course +
+                    "\n" + " and this students major is " + major + " which is " +
+                    major.qualifyForMajor(course) + ". Due to the qualification rules");
         } else if ((course.size() <= 3) && (course.size() > 0)) {
             out += (StudentName + "'s ID number is " + idNumber +
-                    " and this student is not considered full time. They are taking these courses. " + course);
+                    " and this student is not considered full time. They are taking these courses. " + course +
+                    "\n" + " and this students major is" + major + " which is " +
+                    major.qualifyForMajor(course) + ". Due to the qualification rules");
         } else if (course.size() == 0) {
             out += (StudentName + "'s ID number is " + idNumber +
-                    " and this student is not enrolled at this school. ");
+                    " and this student is not enrolled at this school." + "\n" + " and this students major is"
+                    + major + " which is " + major.qualifyForMajor(course) +
+                    ". Due to the qualification rules");
         }
         return out;
         }

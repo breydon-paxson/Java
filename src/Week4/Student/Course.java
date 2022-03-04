@@ -18,8 +18,8 @@ public class Course {
         boolean result;
         if (obj instanceof Course) {
             Course courseOne = (Course) obj;
-
-            if (courseOne.department.equals(department)) {
+            if ((courseOne.department.equals(department)) &&
+                (courseOne.number.equals(number)) && (courseOne.hours.equals(hours))) {
                 result = true;
             } else {
                 result = false;

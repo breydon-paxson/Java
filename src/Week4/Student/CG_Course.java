@@ -8,5 +8,5 @@ public class CG_Course extends Course {
         this.location = location;
     }
 
-    public String toString() { return super.toString() + ". this CG course is located in " + location;}
+    public String toString() { return super.toString() + "\n" + ". this CG course is located in " + location;}
 }
