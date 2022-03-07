@@ -2,38 +2,24 @@ package Week4.Student;
 
 public class StudentCourseTester {
     public static void main(String[] args) {
-        Course math = new Course("Math", "155", "4");
-
-        System.out.println();
-
-        Course science = new Course("Science", "165", "4");
-
-        System.out.println();
-
-        CG_Course History = new CG_Course("History", "275", "5", "Indianola");
-
-        System.out.println();
-
         Student bob = new Student("Bob", 12345, new Math());
         System.out.println(bob);
-        bob.courseAdd(new Course("Math", 121));
-        bob.courseAdd("Science");
-        bob.courseAdd("Math2");
-        bob.courseAdd("Math3");
-        bob.courseAdd("Math4");
-        bob.courseAdd("Math5");
+        bob.courseAdd(new Course("Math", "200", "4"));
+        bob.courseAdd(new Course("Math2", "250", "4"));
+        bob.courseAdd(new Course("Math3", "320", "4"));
+        bob.courseAdd(new Course("Math4", "350", "4"));
+        bob.courseAdd(new Course("Math5", "400", "4"));
         System.out.println(bob);
 
         System.out.println();
 
         Student Breydon = new Student("Breydon", 54321, new CMSC());
         System.out.println(Breydon);
-        Breydon.courseAdd("CMSC");
-        Breydon.courseAdd("History");
-        Breydon.courseAdd("CMSC2");
-        Breydon.courseAdd("CMSC3");
-        Breydon.courseAdd("CMSC4");
-        Breydon.courseAdd("CMSC5");
+        Breydon.courseAdd(new CG_Course("CMSC", "100", "4", "Indianola"));
+        Breydon.courseAdd(new Course("CMSC2", "200", "4"));
+        Breydon.courseAdd(new CG_Course("CMSC3", "300", "4", "Indianola"));
+        Breydon.courseAdd(new Course("CMSC4", "380", "4"));
+        Breydon.courseAdd(new Course("CMSC5", "400", "4"));
         System.out.println(Breydon);
     }
 }

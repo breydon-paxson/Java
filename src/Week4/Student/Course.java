@@ -43,7 +43,7 @@ public class Course {
 
     //print
     public String toString() {
-        return "The course is " + department + " with credit level " + number + " and " + hours + " credit hours";
+        return department + " with credit level " + number + " and " + hours + " credit hours";
     }
 
 }
