@@ -19,8 +19,10 @@ public class Node {
 
 
     public int getValue() {
+
         return value;
     }
+
     //return the node
     public Node getLink() {
         return link;

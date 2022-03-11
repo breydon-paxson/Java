@@ -6,7 +6,7 @@ public class NodeTester {
         Node node1 = new Node(10);
         System.out.println(node1);
 
-        //Add a couple more nodes
+//        //Add a couple more nodes
         Node node2 = new Node(11);
         node1.setLink(node2);
         System.out.println();
@@ -20,6 +20,6 @@ public class NodeTester {
             System.out.print(currentNode + " ");
             currentNode = currentNode.getLink();
         }
-//        System.out.println();
+        System.out.println();
     }
 }
