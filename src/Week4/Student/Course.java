@@ -1,16 +1,16 @@
 package Week4.Student;
 
-public class Course {
+public class Course implements Comparable<Course> {
     //attributes
     private String department;
-    private String number;
-    private String hours;
+    private int number;
+    private int hours;
 
     //constructor
     public Course(String department, String number, String hours) {
         this.department = department;
-        this.number = number;
-        this.hours = hours;
+        number = number;
+        hours = hours;
     }
 
 
@@ -19,7 +19,7 @@ public class Course {
         if (obj instanceof Course) {
             Course courseOne = (Course) obj;
             if ((courseOne.department.equals(department)) &&
-                (courseOne.number.equals(number)) && (courseOne.hours.equals(hours))) {
+                (courseOne.number == number) && (courseOne.hours == hours)) {
                 result = true;
             } else {
                 result = false;
@@ -36,9 +36,22 @@ public class Course {
     }
 
     public int getCourseNumber() {
-        int getNum = Integer.parseInt(number);
+        return number;
+    }
 
-        return getNum;
+    @Override
+    public int compareTo(Course course) {
+        if (this.department.compareTo(course.department) == 0) {
+            if (this.number < course.number) {
+                return -2;
+            } else if (this.number > course.number) {
+                return 2;
+            } else {
+                return 0;
+            }
+        } else {
+            return this.department.compareTo(department);
+        }
     }
 
     //print

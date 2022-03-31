@@ -7,8 +7,11 @@ public class OurLinkedList {
 
     //Constructor
     public OurLinkedList() {
+
         firstNode = null;
     }
+
+
     //addNode
     public void addNode(int value) {
         //create new Node and then decide where it goes
@@ -22,6 +25,7 @@ public class OurLinkedList {
             }
             currentNode.setLink(newNode);
         }
+
     }
 
     public int getValue(int position) {
@@ -69,11 +73,23 @@ public class OurLinkedList {
                 newNode.setLink(tempNode);
             }
         }
-
     }
+
     //Remove
     public void remove(int position) {
-
+        if (position <= 0) {
+            firstNode = firstNode.getLink();
+        } else {
+            Node currentNode = firstNode;
+            if (position > 0) {
+                currentNode.setLink(firstNode);
+                firstNode = currentNode;
+            } else {
+                if (position >= size()) {
+                    remove(position);
+                }
+            }
+        }
     }
 
     //toString
