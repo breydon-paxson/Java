@@ -1,25 +1,44 @@
 package Week4.Student;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class StudentCourseTester {
     public static void main(String[] args) {
-        Student bob = new Student("Bob", 12345, new Math());
-        System.out.println(bob);
-        bob.courseAdd(new Course("Math", "200", "4"));
-        bob.courseAdd(new Course("Math2", "250", "4"));
-        bob.courseAdd(new Course("Math3", "320", "4"));
-        bob.courseAdd(new Course("Math4", "350", "4"));
-        bob.courseAdd(new Course("Math5", "400", "4"));
-        System.out.println(bob);
+        String mathString = "Math";
+        String computerScienceString = "CMSC";
+        Math math = new Math();
+        CMSC cmsc = new CMSC();
 
-        System.out.println();
+        Course fundamentalsI = new Course(computerScienceString, "150", "4");
+        Course algorithms = new Course(computerScienceString, "250", "3");
+        Course math200 = new Course(mathString, "200", "4");
+        Course religion101 = new Course("Religion", "101", "4");
 
-        Student Breydon = new Student("Breydon", 54321, new CMSC());
-        System.out.println(Breydon);
-        Breydon.courseAdd(new CG_Course("CMSC", "100", "4", "Indianola"));
-        Breydon.courseAdd(new Course("CMSC2", "200", "4"));
-        Breydon.courseAdd(new CG_Course("CMSC3", "300", "4", "Indianola"));
-        Breydon.courseAdd(new Course("CMSC4", "380", "4"));
-        Breydon.courseAdd(new Course("CMSC5", "400", "4"));
-        System.out.println(Breydon);
+        Student roseBush = new Student("Rose Bush", 123, math);
+        Student helenHeaven = new Student("Helen Heaven", 987, cmsc);
+        Student jerryAttrick = new Student("Jerry Attrick", 444, cmsc);
+        Student tommyGunn = new Student("Tommy Gunn", 515, cmsc);
+
+        Map<Course, Double> jerryScores = new HashMap<>();
+        jerryScores.put(fundamentalsI, 92.3);
+        jerryScores.put(algorithms, 87.6);
+        jerryScores.put(math200, 88.8);
+        //System.out.println(jerryScores.get(fundamentalsI) < jerryScores.get(algorithms));
+
+        Map<Student, Map<Course, Double>> gradebook = new HashMap<>();
+        jerryAttrick.averageScores(gradebook, jerryAttrick);
+        System.out.println(jerryAttrick.averageScores(gradebook, jerryAttrick));
+
+//        Map<Course, Double> roshScores = new HashMap<>();
+//        roshScores.put(religion101, 77.7);
+//        Map<Student, Map<Course, Double>> gradebook = new HashMap<>();
+//        gradebook.put(roseBush, roshScores);
+//        gradebook.put(jerryAttrick, jerryScores);
+//        jerryScores.put(fundamentalsI, 66.6);
+//        gradebook.put(helenHeaven, jerryScores);
+//        System.out.println(gradebook.get(helenHeaven).get(fundamentalsI));
+//        System.out.println(gradebook.get(jerryAttrick).get(fundamentalsI));
+//        System.out.println(gradebook.get(tommyGunn).get(fundamentalsI));
     }
 }
