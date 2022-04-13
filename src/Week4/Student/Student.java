@@ -88,11 +88,11 @@ public class Student {
                 Set<Course> keyset2 = grades.keySet();
                 for (Course key2 : keyset2) {
                     total += grades.get(key2);
-                    total = total / grades.size();
-                    return total;
                 }
+                total = total / grades.size();
+                return total;
             }
-        } return -1;
+        } return total;
     }
 
             //print

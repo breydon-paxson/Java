@@ -26,9 +26,18 @@ public class StudentCourseTester {
         jerryScores.put(math200, 88.8);
         //System.out.println(jerryScores.get(fundamentalsI) < jerryScores.get(algorithms));
 
+        Map<Course, Double> roseScores = new HashMap<>();
+        roseScores.put(fundamentalsI, 80.3);
+        roseScores.put(algorithms, 87.6);
+        roseScores.put(math200, 88.8);
+
         Map<Student, Map<Course, Double>> gradebook = new HashMap<>();
-        jerryAttrick.averageScores(gradebook, jerryAttrick);
+
+        gradebook.put(roseBush, roseScores);
+        gradebook.put(jerryAttrick, jerryScores);
+
         System.out.println(jerryAttrick.averageScores(gradebook, jerryAttrick));
+        System.out.println(roseBush.averageScores(gradebook, roseBush));
 
 //        Map<Course, Double> roshScores = new HashMap<>();
 //        roshScores.put(religion101, 77.7);

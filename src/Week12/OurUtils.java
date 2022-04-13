@@ -19,14 +19,14 @@ public class OurUtils {
     }
 
     //Remember how to find the minimum
-    public static double minInteger(Double[] array) {
-       double min = array[0];
-       for (int i = 0; i < array.length; i++) {
-           if (min > array[i]) {
-               min = array[i];
+    public static double minDouble(Double[] array) {
+       double smallest = array[0];
+       for (int i = 1; i < array.length; i++) {
+           if (smallest > array[i]) {
+               smallest = array[i];
            }
        }
-       return min;
+       return smallest;
     }
 
     public static <E extends Comparable<E>> E min(E[] array) {
