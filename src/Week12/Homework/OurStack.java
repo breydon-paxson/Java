@@ -2,17 +2,17 @@ package Week12.Homework;
 
 import java.util.Arrays;
 
-public class OurStack {
+public class OurStack <T>{
 
-    private String[] elements;
+    private T[] elements;
     private int size;
 
-    public OurStack(String[] emptyStack) {
+    public OurStack(T[] emptyStack) {
         elements = emptyStack;
         size = 0;
     }
 
-    public void push(String item) {
+    public void push(T item) {
         if (size >= elements.length) {
             increaseCapacity();
         }
@@ -20,8 +20,8 @@ public class OurStack {
         size++;
     }
 
-    public String pop() {
-        String top = "";
+    public T pop() {
+        T top = (T) "";
         if (size > 0) {
             top = elements[size-1];
         }
@@ -29,8 +29,8 @@ public class OurStack {
         return top;
     }
 
-    public String peek() {
-        String top = "";
+    public T peek() {
+        T top = (T) "";
         if (size > 0) {
             top = elements[size-1];
         }

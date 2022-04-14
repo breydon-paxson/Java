@@ -4,12 +4,10 @@ public class OurLinkedList {
     //instance variable
     private Node firstNode;
 
-
     //Constructor
     public OurLinkedList() {
         firstNode = null;
     }
-
 
     //addNode
     public void addNode(int value) {
